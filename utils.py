@@ -19,7 +19,8 @@ def pad_sents(sents, pad_token):
     sents_padded = []
 
     ### YOUR CODE HERE (~6 Lines)
-
+    padded_size = max(map(len, sents))
+    sents_padded = [s + [pad_token] * (padded_size - len(s)) for s in sents]
     ### END YOUR CODE
 
     return sents_padded
